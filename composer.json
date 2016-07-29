@@ -1,0 +1,84 @@
+{
+    "name": "yiisoft/yii2-app-basic",
+    "description": "Yii 2 Basic Project Template",
+    "keywords": ["yii2", "framework", "basic", "project template"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "stable",
+    "require": {
+       
+        "php": "^5.3.2 || ^7.0",
+        "yiisoft/yii2": ">=2.0.4",
+        "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-swiftmailer": "*",
+        "kartik-v/yii2-grid": "*",
+        "kartik-v/yii2-mpdf": "@dev",
+        "kartik-v/yii2-krajee-base": "*",
+         "bower-asset/jquery":">= 1.7.0",
+        "bower-asset/datatables":">= 1.9.4",
+        "bower-asset/datatables-bootstrap3":"*",        
+        "bower-asset/datatables-tabletools":"*",
+        "kartik-v/yii2-widget-datetimepicker": "*",
+        "kartik-v/yii2-widget-datepicker": "@dev",
+        "almasaeed2010/adminlte": "~2.0",
+        "dmstr/yii2-adminlte-asset": "2.*",
+        "kartik-v/yii2-export": "@dev",
+        "kartik-v/yii2-widget-growl": "*"  ,
+        "kartik-v/yii2-widget-alert": "*",
+        "yii2mod/yii2-sweet-alert": "*",
+        "2amigos/yii2-date-picker-widget": "~1.0",
+        "bower-asset/nprogress": "*"
+    },
+    "require-dev": {
+        "yiisoft/yii2-codeception": "*",
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-faker": "*",
+         "fedemotta/yii2-widget-datatables": "*"
+         
+    },
+    "autoload": {
+        "psr-4": {
+            "fedemotta\\datatables\\": ""
+        }
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "bower-asset-library": "vendor/bower"
+        }
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
